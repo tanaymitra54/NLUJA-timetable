@@ -32,8 +32,14 @@ export function classWindow(period, date) {
   return { start, end };
 }
 
+// Dev-only override: force every class to be markable so the UI can be previewed
+// outside class hours. Enabled by ?dev=1 in app.js. Never on in production.
+let FORCE_OPEN = false;
+export function setForceOpen(v) { FORCE_OPEN = !!v; }
+
 // 'upcoming' | 'open' | 'closed'
 export function windowState(period, date, now = new Date()) {
+  if (FORCE_OPEN) return "open";
   const { start, end } = classWindow(period, date);
   if (now < start) return "upcoming";
   if (now > end) return "closed";

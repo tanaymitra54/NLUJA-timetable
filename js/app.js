@@ -1,8 +1,11 @@
 import {
   dateKey, dayKey, windowState, nextClass,
-  marksFor, computeStats, coursePercent,
+  marksFor, computeStats, coursePercent, setForceOpen,
 } from "./attendance.js";
 import { load as loadStore, setMark, clearMark, exportBlob, importFile } from "./store.js";
+
+const IS_DEV = new URLSearchParams(location.search).has("dev");
+if (IS_DEV) setForceOpen(true);
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 const DAY_LABEL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
@@ -61,7 +64,9 @@ function markControls(pid, period, now) {
 
 function renderToday() {
   const now = new Date();
-  const day = dayKey(now);
+  let day = dayKey(now);
+  // Dev preview (?dev=1): on a weekend, show Monday so the marking UI is visible.
+  if (IS_DEV && !DAYS.includes(day)) day = "Mon";
   $("#todayLabel").textContent = `${DAY_LABEL[day] || day}, ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}`;
   const sec = sectionData();
   const row = DAYS.includes(day) ? (sec.days[day] || {}) : {};
@@ -364,6 +369,12 @@ async function boot() {
   setTheme(savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 
   switchView("today");
+  if (IS_DEV) {
+    const b = document.createElement("div");
+    b.textContent = "DEV MODE · marking always open";
+    b.style.cssText = "position:fixed;bottom:82px;left:50%;transform:translateX(-50%);background:#111;color:#fbca1f;font:700 11px/1 system-ui;padding:6px 10px;border-radius:999px;z-index:50;opacity:.92;pointer-events:none";
+    document.body.appendChild(b);
+  }
   setInterval(() => { if (state.view === "today") renderToday(); }, 30000);
 
   // Skip the service worker while developing locally so edits show on refresh.
