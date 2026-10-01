@@ -356,8 +356,15 @@ async function boot() {
   switchView("today");
   setInterval(() => { if (state.view === "today") renderToday(); }, 30000);
 
+  // Skip the service worker while developing locally so edits show on refresh.
+  // On a real host, unregister any stale SW and register for offline support.
+  const isLocal = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    if (isLocal) {
+      navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister())).catch(() => {});
+    } else {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
   }
   addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault(); deferredInstall = e;
