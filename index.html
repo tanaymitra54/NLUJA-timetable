@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>NLUJA Timetable</title>
   <meta name="description" content="NLUJA Assam odd-semester timetable — offline, installable, with personal attendance tracking." />
-  <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0a0a0d" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0f5c56" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#161412" media="(prefers-color-scheme: dark)" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="icons/3d/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="NLUJA TT" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip" href="#view-today">Skip to schedule</a>
   <header class="topbar">
     <div class="brand">
-      <span class="logo">TT</span>
+      <img class="logo" src="icons/3d/logo.png" alt="" />
       <div>
         <h1>NLUJA Timetable</h1>
         <p class="muted" id="todayLabel"></p>
@@ -27,7 +31,9 @@
     <div class="top-actions">
       <button class="chip hidden" id="installBtn">Install app</button>
       <button class="chip" id="sectionBtn" aria-label="Change semester">—</button>
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch to dark theme">
+        <img src="icons/3d/moon.png" alt="" width="28" height="28" />
+      </button>
     </div>
   </header>
 
@@ -39,15 +45,15 @@
 
   <nav class="tabbar" id="tabbar">
     <button class="tab active" data-view="today">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+      <img src="icons/3d/today.png" alt="" width="30" height="30" />
       Today
     </button>
     <button class="tab" data-view="week">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      <img src="icons/3d/week.png" alt="" width="30" height="30" />
       Week
     </button>
     <button class="tab" data-view="att">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <img src="icons/3d/attendance.png" alt="" width="30" height="30" />
       Attendance
     </button>
   </nav>

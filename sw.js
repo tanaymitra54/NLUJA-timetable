@@ -15,6 +15,13 @@ const ASSETS = [
   "icons/icon-512.png",
   "icons/apple-touch-icon.png",
   "icons/favicon.svg",
+  "icons/3d/logo.png",
+  "icons/3d/today.png",
+  "icons/3d/week.png",
+  "icons/3d/attendance.png",
+  "icons/3d/sun.png",
+  "icons/3d/moon.png",
+  "icons/3d/empty.png",
 ];
 
 self.addEventListener("install", (e) => {

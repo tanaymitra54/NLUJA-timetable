@@ -72,25 +72,34 @@ function renderToday() {
   if (nx) {
     const first = nx.cells[0];
     hero = `<div class="hero">
-      <div class="eyebrow">Next class</div>
-      <div class="hero-code">${esc(first.code)} · ${esc(courseName(first))}</div>
-      <div class="hero-meta">
-        <span>${esc(nx.period.start)}–${esc(nx.period.end)}</span>
-        ${first.room ? `<span>Room ${esc(first.room)}</span>` : ""}
-        ${first.faculty?.length ? `<span>${esc(first.faculty.map(facName).join(", "))}</span>` : ""}
+      <img class="hero-mark" src="icons/3d/today.png" alt="" />
+      <div class="hero-copy">
+        <div class="eyebrow">Next class</div>
+        <div class="hero-code">${esc(first.code)} · ${esc(courseName(first))}</div>
+        <div class="hero-meta">
+          <span>${esc(nx.period.start)}–${esc(nx.period.end)}</span>
+          ${first.room ? `<span>Room ${esc(first.room)}</span>` : ""}
+          ${first.faculty?.length ? `<span>${esc(first.faculty.map(facName).join(", "))}</span>` : ""}
+        </div>
       </div>
     </div>`;
   } else if (!entries.length) {
     hero = `<div class="hero gone">
-      <div class="eyebrow">Today</div>
-      <div class="hero-name">No classes scheduled</div>
-      <div class="hero-meta">${DAYS.includes(day) ? "Enjoy the free day." : "It's the weekend."}</div>
+      <img class="hero-mark" src="icons/3d/empty.png" alt="" />
+      <div class="hero-copy">
+        <div class="eyebrow">Today</div>
+        <div class="hero-name">No classes scheduled</div>
+        <div class="hero-meta">${DAYS.includes(day) ? "Enjoy the free day." : "It's the weekend."}</div>
+      </div>
     </div>`;
   } else {
     hero = `<div class="hero gone">
-      <div class="eyebrow">Today</div>
-      <div class="hero-name">All classes done</div>
-      <div class="hero-meta">${entries.length} class${entries.length > 1 ? "es" : ""} wrapped up.</div>
+      <img class="hero-mark" src="icons/3d/empty.png" alt="" />
+      <div class="hero-copy">
+        <div class="eyebrow">Today</div>
+        <div class="hero-name">All classes done</div>
+        <div class="hero-meta">${entries.length} class${entries.length > 1 ? "es" : ""} wrapped up.</div>
+      </div>
     </div>`;
   }
 
@@ -183,7 +192,7 @@ function renderAttendance() {
       </div>
       <div class="cr-pct" style="color:${ringColor(cp)}">${cp}%</div>
     </div>`;
-  }).join("") : `<div class="empty"><div class="emoji">🗓️</div><p>No attendance recorded yet.<br>Mark your classes from the Today tab.</p></div>`;
+  }).join("") : `<div class="empty"><img class="empty-mark" src="icons/3d/empty.png" alt="" /><p>No attendance recorded yet.<br>Mark your classes from the Today tab.</p></div>`;
 
   $("#view-att").innerHTML = `
     <div class="att-top">
@@ -326,12 +335,13 @@ $("#view-week").addEventListener("input", (e) => {
   }
 });
 
-document.getElementById("themeBtn").innerHTML =
-  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>`;
-
 function setTheme(mode) {
   document.documentElement.setAttribute("data-theme", mode);
   localStorage.setItem("nluja.theme", mode);
+  const img = document.querySelector("#themeBtn img");
+  const btn = document.getElementById("themeBtn");
+  if (img) img.src = mode === "dark" ? "icons/3d/sun.png" : "icons/3d/moon.png";
+  if (btn) btn.setAttribute("aria-label", mode === "dark" ? "Switch to light theme" : "Switch to dark theme");
 }
 
 /* ---------------- boot ---------------- */
