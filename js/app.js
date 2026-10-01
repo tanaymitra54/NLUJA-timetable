@@ -1,5 +1,5 @@
 import {
-  dateKey, dayKey, windowState, nextClass, classWindow,
+  dateKey, dayKey, windowState, nextClass,
   marksFor, computeStats, coursePercent,
 } from "./attendance.js";
 import { load as loadStore, setMark, clearMark, exportBlob, importFile } from "./store.js";
@@ -54,13 +54,7 @@ function markControls(pid, period, now) {
   if (st === "open") {
     return `<button class="btn present" data-present="${pid}">Mark present</button><button class="btn absent" data-absent="${pid}">Mark absent</button>`;
   }
-  if (st === "upcoming") {
-    const { start } = classWindow(period, now);
-    const mins = Math.max(0, Math.round((start - now) / 60000));
-    const txt = mins < 60 ? `in ${mins} min` : `in ${Math.floor(mins / 60)}h ${mins % 60}m`;
-    return `<span class="pill soon">Starts ${txt}</span>`;
-  }
-  return `<span class="pill closed">Marking closed</span>`;
+  return "";
 }
 
 /* ---------------- Today ---------------- */
@@ -85,7 +79,6 @@ function renderToday() {
         ${first.room ? `<span>Room ${esc(first.room)}</span>` : ""}
         ${first.faculty?.length ? `<span>${esc(first.faculty.map(facName).join(", "))}</span>` : ""}
       </div>
-      <div class="countdown" data-countdown="${nx.period.start}"></div>
     </div>`;
   } else if (!entries.length) {
     hero = `<div class="hero gone">
@@ -128,18 +121,6 @@ function renderToday() {
   }).join("");
 
   $("#view-today").innerHTML = hero + (entries.length ? `<div class="section-title">Today's schedule</div>${list}` : "");
-  tickCountdowns();
-}
-
-function tickCountdowns() {
-  const now = new Date();
-  document.querySelectorAll("[data-countdown]").forEach((el) => {
-    const { start } = classWindow({ start: el.dataset.countdown }, now);
-    let ms = start - now;
-    if (ms < 0) { el.innerHTML = "<b>Starting now</b>"; return; }
-    const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
-    el.innerHTML = `Begins in <b>${h ? h + "h " : ""}${m}m ${String(s).padStart(2, "0")}s</b>`;
-  });
 }
 
 /* ---------------- Week ---------------- */
@@ -373,7 +354,6 @@ async function boot() {
   setTheme(savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 
   switchView("today");
-  setInterval(() => { if (state.view === "today") tickCountdowns(); }, 1000);
   setInterval(() => { if (state.view === "today") renderToday(); }, 30000);
 
   if ("serviceWorker" in navigator) {
