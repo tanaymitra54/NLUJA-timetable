@@ -1,0 +1,10 @@
+{
+  "name": "nluja-timetable",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first PWA for the NLUJA odd-semester timetable with personal attendance tracking.",
+  "scripts": {
+    "test": "node tools/attendance.test.mjs && python3 tools/verify_data.py"
+  }
+}

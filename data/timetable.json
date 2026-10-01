@@ -1,0 +1,3912 @@
+{
+ "meta": {
+  "university": "National Law University and Judicial Academy, Assam",
+  "programme": "B.A., LL.B. (Hons.)",
+  "academicYear": "2026-27",
+  "semester": "Odd Semester",
+  "source": "Time_Table_UG_Odd_Sem_2026-2027_10_Aug.docx.pdf"
+ },
+ "periods": [
+  {
+   "id": "p1",
+   "start": "09:00",
+   "end": "09:50"
+  },
+  {
+   "id": "p2",
+   "start": "09:55",
+   "end": "10:45"
+  },
+  {
+   "id": "p3",
+   "start": "10:50",
+   "end": "11:40"
+  },
+  {
+   "id": "p4",
+   "start": "11:55",
+   "end": "12:45"
+  },
+  {
+   "id": "p5",
+   "start": "12:50",
+   "end": "13:40"
+  },
+  {
+   "id": "p6",
+   "start": "14:40",
+   "end": "15:30"
+  },
+  {
+   "id": "p7",
+   "start": "15:35",
+   "end": "16:25"
+  },
+  {
+   "id": "p8",
+   "start": "16:30",
+   "end": "17:20"
+  }
+ ],
+ "sections": {
+  "I-A": {
+   "label": "I Year · Section A",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "LEGAL METHODS- KJ",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "KJ"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "SOCIO I - PPS",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "SOCIO I - PPS",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "LEGAL METHODS- KJ",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "KJ"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "SOCIO I - PPS",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "LEGAL METHODS - KJ",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "KJ"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "LEGAL METHODS- KJ",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "KJ"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "SOCIO I - PPS",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology I"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "SOCIO I - PPS",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "LEGAL METHODS- KJ",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "KJ"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "110",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "POL SC I- SK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "T",
+       "room": "110",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ]
+    }
+   }
+  },
+  "I-B": {
+   "label": "I Year · Section B",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "LEGAL METHODS- SI",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SI"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "SOCIO I - AC",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "AC"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "SOCIO I - AC",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "AC"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "LEGAL METHODS- SI",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "SI"
+       ],
+       "name": "Legal Methods"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "SOCIO I - AC",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "AC"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "LEGAL METHODS- SI",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SI"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "POL SC I- SK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "POL SC I- SHK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "SOCIO I - AC",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "AC"
+       ],
+       "name": "Sociology I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "LEGAL METHODS- SI",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SI"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "LEGAL METHODS- SI",
+       "code": "1.6",
+       "title": "LEGAL METHODS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SI"
+       ],
+       "name": "Legal Methods"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ENG I - ADH",
+       "code": "1.1",
+       "title": "ENG I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "ADH"
+       ],
+       "name": "English I"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "POL SC I- SK/ST",
+       "code": "1.3",
+       "title": "POL SC I",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "SHK",
+        "ST"
+       ],
+       "name": "Political Science I"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "TORTS - DS",
+       "code": "1.5",
+       "title": "TORTS",
+       "type": "L",
+       "room": "112",
+       "faculty": [
+        "DS"
+       ],
+       "name": "Torts"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "HIST I - NG/UD",
+       "code": "1.2",
+       "title": "HIST I",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "NG",
+        "UD"
+       ],
+       "name": "History I"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "SOCIO I - AC",
+       "code": "1.4",
+       "title": "SOCIO I",
+       "type": "T",
+       "room": "112",
+       "faculty": [
+        "AC"
+       ],
+       "name": "Sociology I"
+      }
+     ]
+    }
+   }
+  },
+  "III": {
+   "label": "III Semester",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "SPL CONTRACTS - MG",
+       "code": "3.6",
+       "title": "SPL CONTRACTS",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "MG"
+       ],
+       "name": "Special Contracts"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ECO III- DD/PC",
+       "code": "3.4",
+       "title": "ECO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "DD",
+        "PC"
+       ],
+       "name": "Economics III"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "JURIS-SC",
+       "code": "3.5",
+       "title": "JURIS-SC",
+       "type": "L",
+       "room": "210",
+       "faculty": [],
+       "name": "Jurisprudence"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "POL SC III- SHK",
+       "code": "3.2",
+       "title": "POL SC III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "SHK"
+       ],
+       "name": "Political Science III"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "HIST III - NG",
+       "code": "3.1",
+       "title": "HIST III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "NG"
+       ],
+       "name": "History III"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "SOCIO III- PPS",
+       "code": "3.3",
+       "title": "SOCIO III",
+       "type": "T",
+       "room": "210",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology III"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "JURIS-SC",
+       "code": "3.5",
+       "title": "JURIS-SC",
+       "type": "L",
+       "room": "210",
+       "faculty": [],
+       "name": "Jurisprudence"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "SOCIO III- PPS",
+       "code": "3.3",
+       "title": "SOCIO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology III"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "POL SC III- SHK",
+       "code": "3.2",
+       "title": "POL SC III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "SHK"
+       ],
+       "name": "Political Science III"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "HIST III- NG",
+       "code": "3.1",
+       "title": "HIST III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "NG"
+       ],
+       "name": "History III"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "ECO III- DD/PC",
+       "code": "3.4",
+       "title": "ECO III",
+       "type": "T",
+       "room": "210",
+       "faculty": [
+        "DD",
+        "PC"
+       ],
+       "name": "Economics III"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "SPL CONTRACTS - MG",
+       "code": "3.6",
+       "title": "SPL CONTRACTS",
+       "type": "T",
+       "room": "210",
+       "faculty": [
+        "MG"
+       ],
+       "name": "Special Contracts"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "JURIS-SC",
+       "code": "3.5",
+       "title": "JURIS-SC",
+       "type": "L",
+       "room": "210",
+       "faculty": [],
+       "name": "Jurisprudence"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ECO III- DD/PC",
+       "code": "3.4",
+       "title": "ECO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "DD",
+        "PC"
+       ],
+       "name": "Economics III"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "HIST III - NG",
+       "code": "3.1",
+       "title": "HIST III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "NG"
+       ],
+       "name": "History III"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "SPL CONTRACTS - MG",
+       "code": "3.6",
+       "title": "SPL CONTRACTS",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "MG"
+       ],
+       "name": "Special Contracts"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "SOCIO III- PPS",
+       "code": "3.3",
+       "title": "SOCIO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology III"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "POL SC III- SHK",
+       "code": "3.2",
+       "title": "POL SC III",
+       "type": "T",
+       "room": "210",
+       "faculty": [
+        "SHK"
+       ],
+       "name": "Political Science III"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "POL SC III- SK",
+       "code": "3.2",
+       "title": "POL SC III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "SK"
+       ],
+       "name": "Political Science III"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "SOCIO III- PPS",
+       "code": "3.3",
+       "title": "SOCIO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology III"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "JURIS-SC",
+       "code": "3.5",
+       "title": "JURIS-SC",
+       "type": "L",
+       "room": "210",
+       "faculty": [],
+       "name": "Jurisprudence"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "ECO III- DD/PC",
+       "code": "3.4",
+       "title": "ECO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "DD",
+        "PC"
+       ],
+       "name": "Economics III"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "SPL CONTRACTS - MG",
+       "code": "3.6",
+       "title": "SPL CONTRACTS",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "MG"
+       ],
+       "name": "Special Contracts"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "HIST III - NG",
+       "code": "3.1",
+       "title": "HIST III",
+       "type": "T",
+       "room": "210",
+       "faculty": [
+        "NG"
+       ],
+       "name": "History III"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "ECO III- DD/PC",
+       "code": "3.4",
+       "title": "ECO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "DD",
+        "PC"
+       ],
+       "name": "Economics III"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "SPL CONTRACTS - MG",
+       "code": "3.6",
+       "title": "SPL CONTRACTS",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "MG"
+       ],
+       "name": "Special Contracts"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "SOCIO III- PPS",
+       "code": "3.3",
+       "title": "SOCIO III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "PPS"
+       ],
+       "name": "Sociology III"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "HIST III - NG",
+       "code": "3.1",
+       "title": "HIST III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "NG"
+       ],
+       "name": "History III"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "POL SC III- SK",
+       "code": "3.2",
+       "title": "POL SC III",
+       "type": "L",
+       "room": "210",
+       "faculty": [
+        "SK"
+       ],
+       "name": "Political Science III"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "JURIS-SC",
+       "code": "3.5",
+       "title": "JURIS-SC",
+       "type": "T",
+       "room": "210",
+       "faculty": [],
+       "name": "Jurisprudence"
+      }
+     ]
+    }
+   }
+  },
+  "V": {
+   "label": "V Semester",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "- ENG (113)/ECO(214)/POL(212)/HIST(314)/SOC(015)- NS/DD/ST/UD/AC",
+       "code": "501",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "NS",
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "015",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Elective (ENG / ECO / POL / HIST / SOC)"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "- FL- TT (212)",
+       "code": "504",
+       "title": "FL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Paper 504 (FL)"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-CPC- SK (212)",
+       "code": "505",
+       "title": "CPC",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "SK"
+       ],
+       "options": null,
+       "name": "Civil Procedure Code"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-PL- KG (212)",
+       "code": "506",
+       "title": "PL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "KG"
+       ],
+       "options": null,
+       "name": "Paper 506 (PL)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "-CL- AM (212)",
+       "code": "503",
+       "title": "CL",
+       "type": "T",
+       "room": "212",
+       "faculty": [
+        "AM"
+       ],
+       "options": null,
+       "name": "Paper 503 (CL)"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "-FL- TT (212)",
+       "code": "504",
+       "title": "FL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Paper 504 (FL)"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-ENG (113)/ECO(214)/POL(212)/HIST(314)/SOC(311)-NS/DD/ST/UD/AC",
+       "code": "501",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "NS",
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Elective (ENG / ECO / POL / HIST / SOC)"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-PL- KG (212)",
+       "code": "506",
+       "title": "PL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "KG"
+       ],
+       "options": null,
+       "name": "Paper 506 (PL)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-CPC- SK (212)",
+       "code": "505",
+       "title": "CPC",
+       "type": "T",
+       "room": "212",
+       "faculty": [
+        "SK"
+       ],
+       "options": null,
+       "name": "Civil Procedure Code"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "-CL- AM (212)",
+       "code": "503",
+       "title": "CL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "AM"
+       ],
+       "options": null,
+       "name": "Paper 503 (CL)"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "- ENG(113)/ECO(214)/POL(212)/SOC(311) - ADH/DD/ST/AC",
+       "code": "502",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "ADH",
+        "DD",
+        "ST",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "ADH"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ],
+     "p7": [
+      {
+       "raw": "HIST (314)- UD",
+       "code": "502",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "UD"
+       ],
+       "options": [
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "-CPC- SK (212)",
+       "code": "505",
+       "title": "CPC",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "SK"
+       ],
+       "options": null,
+       "name": "Civil Procedure Code"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-PL- KG (212)",
+       "code": "506",
+       "title": "PL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "KG"
+       ],
+       "options": null,
+       "name": "Paper 506 (PL)"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-CL-AM (212)",
+       "code": "503",
+       "title": "CL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "AM"
+       ],
+       "options": null,
+       "name": "Paper 503 (CL)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-ENG (113)/ECO(214)/POL(212)/HIST(314)/SOC(311)- NS/DD/ST/UD/AC",
+       "code": "501",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "NS",
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Elective (ENG / ECO / POL / HIST / SOC)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "-FL- TT (212)",
+       "code": "504",
+       "title": "FL",
+       "type": "T",
+       "room": "212",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Paper 504 (FL)"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "-CPC- SK (212)",
+       "code": "505",
+       "title": "CPC",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "SK"
+       ],
+       "options": null,
+       "name": "Civil Procedure Code"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-CL- AM (212)",
+       "code": "503",
+       "title": "CL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "AM"
+       ],
+       "options": null,
+       "name": "Paper 503 (CL)"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-FL-TT (212)",
+       "code": "504",
+       "title": "FL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Paper 504 (FL)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-PL- KG (212)",
+       "code": "506",
+       "title": "PL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "KG"
+       ],
+       "options": null,
+       "name": "Paper 506 (PL)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "-ENG (113)/ECO(214)/POL(212)/HIST(314)/SOC(311)- NS/DD/ST/UD/AC",
+       "code": "501",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "NS",
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Elective (ENG / ECO / POL / HIST / SOC)"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "- ECO(214)/POL(212)/HIST(314)/SOC(311)- DD/ST/UD/AC",
+       "code": "502",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "-FL-TT (212)",
+       "code": "504",
+       "title": "FL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Paper 504 (FL)"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-CPC- SK (212)",
+       "code": "505",
+       "title": "CPC",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "SK"
+       ],
+       "options": null,
+       "name": "Civil Procedure Code"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-CL-AM (212)",
+       "code": "503",
+       "title": "CL",
+       "type": "L",
+       "room": "212",
+       "faculty": [
+        "AM"
+       ],
+       "options": null,
+       "name": "Paper 503 (CL)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-ENG (113)/ECO(214)/POL (212)/HIST(314)/SOC (311)- NS/DD/ST/UD/AC",
+       "code": "501",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "NS",
+        "DD",
+        "ST",
+        "UD",
+        "AC"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "DD"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "212",
+         "faculty": [
+          "ST"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "UD"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "AC"
+         ]
+        }
+       ],
+       "name": "Elective (ENG / ECO / POL / HIST / SOC)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "-PL- KG (212)",
+       "code": "506",
+       "title": "PL",
+       "type": "T",
+       "room": "212",
+       "faculty": [
+        "KG"
+       ],
+       "options": null,
+       "name": "Paper 506 (PL)"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "ENG (113)- ADH",
+       "code": "502",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "ADH"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "ADH"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ]
+    }
+   }
+  },
+  "VII": {
+   "label": "VII Semester",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "- CN(310)/BL(313)/IL(410)/IP(411)- HRN/SN/AB/AD",
+       "code": "705",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "SN",
+        "AB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "410",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "411",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-CN(113)/CR(214)/BL(313)/IL(314)/IP(015)- KAG/AB/MG/SD/DP",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "DP"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "015",
+         "faculty": [
+          "DP"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "- TAX- MN (313)",
+       "code": "702",
+       "title": "TAX",
+       "type": "L",
+       "room": "313",
+       "faculty": [
+        "MR"
+       ],
+       "options": null,
+       "name": "Taxation"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-CN(310)/CR (311)/BL(313)/IL (314)/IP(214)- KAG/AB/MG/SD/MB",
+       "code": "704",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "MB"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "MB"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "POL (313)- SHK",
+       "code": "701",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "SHK"
+       ],
+       "options": [
+        {
+         "group": "POL",
+         "room": "313",
+         "faculty": [
+          "SHK"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "HIST (314)- NG",
+       "code": "701",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "NG"
+       ],
+       "options": [
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "NG"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      },
+      {
+       "raw": "CR- TT (313)",
+       "code": "705",
+       "title": "CR",
+       "type": "L",
+       "room": "313",
+       "faculty": [
+        "TT"
+       ],
+       "options": null,
+       "name": "Specialization Paper"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "-CR(113)/BL(214)/IL(410)/IP(411)- AB/MG/SD/DP",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "AB",
+        "MG",
+        "SD",
+        "DP"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "113",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "214",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "410",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "411",
+         "faculty": [
+          "DP"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-TAX-MR (313)",
+       "code": "702",
+       "title": "TAX",
+       "type": "L",
+       "room": "313",
+       "faculty": [
+        "MR"
+       ],
+       "options": null,
+       "name": "Taxation"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-CN (310)/BL(313)/IL(314)/IP(214) - RV/SN/AB/AD",
+       "code": "705",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "RV",
+        "SN",
+        "AB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "- ENG(113)/ECO(214)/SOC(311)- NS/PC/PPS",
+       "code": "701",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "NS",
+        "PC",
+        "PPS"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "113",
+         "faculty": [
+          "NS"
+         ]
+        },
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "PC"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "PPS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "- CR (310)- TT",
+       "code": "705",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "TT"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "310",
+         "faculty": [
+          "TT"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "-CN(310)- KAG",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KAG"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "-TAX- MR (313)",
+       "code": "702",
+       "title": "TAX",
+       "type": "L",
+       "room": "313",
+       "faculty": [
+        "MR"
+       ],
+       "options": null,
+       "name": "Taxation"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "-CN(113)/CR(214)/BL(313)/IL(314)/IP(015)- KAG/AB/MG/SD/DP",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "DP"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "015",
+         "faculty": [
+          "DP"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "- CN(310)/CR(311)/BL(313)/IL(314)/IP (214)-KAG/AB/MG/SD/MB",
+       "code": "704",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "MB"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "MB"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "-CN(310)/CR (311)/BL(313)/IL(314)/IP(214)- RV/TT/SN/AB/AD",
+       "code": "705",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "RV",
+        "TT",
+        "SN",
+        "AB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "- CN(310)/CR(311)/BL(313)/IL(314)/IP(214)- HRN/DS/RV/DB/AD",
+       "code": "706",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "DS",
+        "RV",
+        "DB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "DS"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "DB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "-TAX- MR (313)",
+       "code": "702",
+       "title": "TAX",
+       "type": "L",
+       "room": "313",
+       "faculty": [
+        "MR"
+       ],
+       "options": null,
+       "name": "Taxation"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "- CN(310)/CR(311)/BL(313)/IL(314)/IP(214)- HRN/TT/SN/AB/AD",
+       "code": "705",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "TT",
+        "SN",
+        "AB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-CN(113)/CR(214)/BL(313)/IL(314)/IP(015) - KAG/AB/MG/SD/DP",
+       "code": "703",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "DP"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "015",
+         "faculty": [
+          "DP"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "- CN(113)/BL(313)/IL(314)/IP(214)- HRN/RV/DB/AD",
+       "code": "706",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "RV",
+        "DB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "DB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "- ECO(214)/POL(313)/HIST(314)/SOC (311)- PC/SHK/NG/PPS",
+       "code": "701",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "PC",
+        "SHK",
+        "NG",
+        "PPS"
+       ],
+       "options": [
+        {
+         "group": "ECO",
+         "room": "214",
+         "faculty": [
+          "PC"
+         ]
+        },
+        {
+         "group": "POL",
+         "room": "313",
+         "faculty": [
+          "SHK"
+         ]
+        },
+        {
+         "group": "HIST",
+         "room": "314",
+         "faculty": [
+          "NG"
+         ]
+        },
+        {
+         "group": "SOC",
+         "room": "311",
+         "faculty": [
+          "PPS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "ENG (310)- NS",
+       "code": "701",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "NS"
+       ],
+       "options": [
+        {
+         "group": "ENG",
+         "room": "310",
+         "faculty": [
+          "NS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "-CN(113)/CR(214)/BL(313)/IL(314)/IP(015)- KAG/AB/MG/SD/DP",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "AB",
+        "MG",
+        "SD",
+        "DP"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "015",
+         "faculty": [
+          "DP"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "- CN(310)/BL(313)/IL(314)/IP(214)- HRN/SN/AB/AD",
+       "code": "705",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "SN",
+        "AB",
+        "AD"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "313",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "314",
+         "faculty": [
+          "AB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "214",
+         "faculty": [
+          "AD"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "-TAX- MR (313)",
+       "code": "702",
+       "title": "TAX",
+       "type": "T",
+       "room": "313",
+       "faculty": [
+        "MR"
+       ],
+       "options": null,
+       "name": "Taxation"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "CR (310)- TT",
+       "code": "705",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "TT"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "310",
+         "faculty": [
+          "TT"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "CN (310)- KAG",
+       "code": "703",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KAG"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "-CR(411) DS",
+       "code": "706",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "DS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "411",
+         "faculty": [
+          "DS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ]
+    }
+   }
+  },
+  "IX": {
+   "label": "IX Semester",
+   "days": {
+    "Mon": {
+     "p1": [
+      {
+       "raw": "ADR- SD (413)",
+       "code": "901",
+       "title": "ADR",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "SD"
+       ],
+       "options": null,
+       "name": "Alternative Dispute Resolution"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "CN(310)/CR(311)/BL(413)/IP(314)- SI/KG/SN/SYS",
+       "code": "905",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "SI",
+        "KG",
+        "SN",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "SI"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "KG"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "314",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "CR(314)/BL(410)/IL(411)/IP(413)- RV/AM/TT/SYS",
+       "code": "903",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "RV",
+        "AM",
+        "TT",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "314",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "AM"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "MED-ABC (413)",
+       "code": "902",
+       "title": "MED",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "ABC"
+       ],
+       "options": null,
+       "name": "Paper 902 (MED)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "MED-ABC (413)",
+       "code": "902",
+       "title": "MED",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "ABC"
+       ],
+       "options": null,
+       "name": "Paper 902 (MED)"
+      }
+     ]
+    },
+    "Tue": {
+     "p1": [
+      {
+       "raw": "CN(310)/CR(311)/BL(413)/IP(314)-HRN/KG/SN/SYS",
+       "code": "905",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "KG",
+        "SN",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "KG"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "314",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "CR(311)/BL(410)/IL(411)/IP (413)- RV/AM/TT/SYS",
+       "code": "903",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "RV",
+        "AM",
+        "TT",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "AM"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "ADR- SD (413)",
+       "code": "901",
+       "title": "ADR",
+       "type": "T",
+       "room": "413",
+       "faculty": [
+        "SD"
+       ],
+       "options": null,
+       "name": "Alternative Dispute Resolution"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "MED- ABC (413)",
+       "code": "902",
+       "title": "MED",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "ABC"
+       ],
+       "options": null,
+       "name": "Paper 902 (MED)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "MED- ABC (413)",
+       "code": "902",
+       "title": "MED",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "ABC"
+       ],
+       "options": null,
+       "name": "Paper 902 (MED)"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "BL(413)- MG",
+       "code": "904",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "MG"
+       ],
+       "options": [
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "MG"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ]
+    },
+    "Wed": {
+     "p1": [
+      {
+       "raw": "ADR- SD (413)",
+       "code": "901",
+       "title": "ADR",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "SD"
+       ],
+       "options": null,
+       "name": "Alternative Dispute Resolution"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "CR(311)/BL(410)/IL(411)/IP(413)- RV/AM/TT/SYS",
+       "code": "903",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "RV",
+        "AM",
+        "TT",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "AM"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "CN(113)/CR(214)/BL(413)/IP(410)-HRN/KG/SN/SYS",
+       "code": "905",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "KG",
+        "SN",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "113",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "KG"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "410",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "CR(413)- DS",
+       "code": "906",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "DS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "413",
+         "faculty": [
+          "DS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "CR(113)/BL(410)/IL(411)/IP(413)- SI/MG/IB/SYS",
+       "code": "904",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "SI",
+        "MG",
+        "IB",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "113",
+         "faculty": [
+          "SI"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "MG"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "IB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ]
+    },
+    "Thu": {
+     "p1": [
+      {
+       "raw": "CR(311)/BL (410)/IP(413)- RV/AM/SY S",
+       "code": "903",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "RV",
+        "AM",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "AM"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "ADR-SD (413)",
+       "code": "901",
+       "title": "ADR",
+       "type": "L",
+       "room": "413",
+       "faculty": [
+        "SD"
+       ],
+       "options": null,
+       "name": "Alternative Dispute Resolution"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "CR(310)/IL(411)/IP (413)- SI/IB/SYS",
+       "code": "904",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "SI",
+        "IB",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "310",
+         "faculty": [
+          "SI"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "IB"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "- CN(310)/CR(311)/BL(413)/IP(410) - KAG/DS/SD/MB",
+       "code": "906",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "DS",
+        "SD",
+        "MB"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "311",
+         "faculty": [
+          "DS"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "410",
+         "faculty": [
+          "MB"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "IL(413) TT",
+       "code": "903",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "TT"
+       ],
+       "options": [
+        {
+         "group": "IL",
+         "room": "413",
+         "faculty": [
+          "TT"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p6": [
+      {
+       "raw": "CN(310)/CR(411)/BL(413)/IP(410)-SI/KG/SN/SYS",
+       "code": "905",
+       "title": null,
+       "type": "T",
+       "room": null,
+       "faculty": [
+        "SI",
+        "KG",
+        "SN",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "SI"
+         ]
+        },
+        {
+         "group": "CR",
+         "room": "411",
+         "faculty": [
+          "KG"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "410",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p7": [
+      {
+       "raw": "MED- ABC (413)",
+       "code": "902",
+       "title": "MED",
+       "type": "T",
+       "room": "413",
+       "faculty": [
+        "ABC"
+       ],
+       "options": null,
+       "name": "Paper 902 (MED)"
+      }
+     ]
+    },
+    "Fri": {
+     "p1": [
+      {
+       "raw": "CN(310)/BL(413)/IP(410)-HRN/SN/SYS",
+       "code": "905",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "HRN",
+        "SN",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "HRN"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SN"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "410",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p2": [
+      {
+       "raw": "CR(214)/BL(410)/IL(411)/IP(413)- RV/AM/TT/SYS",
+       "code": "903",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "RV",
+        "AM",
+        "TT",
+        "SYS"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "214",
+         "faculty": [
+          "RV"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "410",
+         "faculty": [
+          "AM"
+         ]
+        },
+        {
+         "group": "IL",
+         "room": "411",
+         "faculty": [
+          "TT"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "413",
+         "faculty": [
+          "SYS"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ],
+     "p3": [
+      {
+       "raw": "ADR-SD (413)",
+       "code": "901",
+       "title": "ADR",
+       "type": "T",
+       "room": "413",
+       "faculty": [
+        "SD"
+       ],
+       "options": null,
+       "name": "Alternative Dispute Resolution"
+      }
+     ],
+     "p4": [
+      {
+       "raw": "- CN(310)/BL(413)/IP(410)- KAG/SD/MB",
+       "code": "906",
+       "title": null,
+       "type": "SP",
+       "room": null,
+       "faculty": [
+        "KAG",
+        "SD",
+        "MB"
+       ],
+       "options": [
+        {
+         "group": "CN",
+         "room": "310",
+         "faculty": [
+          "KAG"
+         ]
+        },
+        {
+         "group": "BL",
+         "room": "413",
+         "faculty": [
+          "SD"
+         ]
+        },
+        {
+         "group": "IP",
+         "room": "410",
+         "faculty": [
+          "MB"
+         ]
+        }
+       ],
+       "name": "Seminar Paper (Specialization)"
+      }
+     ],
+     "p5": [
+      {
+       "raw": "CR (413)- KG",
+       "code": "905",
+       "title": null,
+       "type": "L",
+       "room": null,
+       "faculty": [
+        "KG"
+       ],
+       "options": [
+        {
+         "group": "CR",
+         "room": "413",
+         "faculty": [
+          "KG"
+         ]
+        }
+       ],
+       "name": "Specialization Paper"
+      }
+     ]
+    }
+   }
+  }
+ }
+}
