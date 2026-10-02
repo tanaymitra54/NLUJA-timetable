@@ -474,12 +474,22 @@ async function boot() {
       navigator.serviceWorker.register("sw.js").catch(() => {});
     }
   }
+  const isStandalone = () => navigator.standalone === true || matchMedia("(display-mode: standalone)").matches;
+  const isIOS = /iP(hone|od|ad)/.test(navigator.platform) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
   addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault(); deferredInstall = e;
     $("#installBtn").classList.remove("hidden");
   });
+  // iOS Safari has no install prompt — show the manual Add to Home Screen steps.
+  if (isIOS && !isStandalone()) {
+    $("#installBtn").textContent = "Add to Home Screen";
+    $("#installBtn").classList.remove("hidden");
+  }
   $("#installBtn").addEventListener("click", async () => {
-    if (!deferredInstall) return;
+    if (!deferredInstall) {
+      if (isIOS) showSheet(`<div class="grabber"></div><h3>Add to Home Screen</h3><p>Tap the <b>Share</b> button in Safari, then choose <b>Add to Home Screen</b>.</p>`);
+      return;
+    }
     deferredInstall.prompt();
     await deferredInstall.userChoice;
     deferredInstall = null;
