@@ -1,5 +1,5 @@
 // Offline-first service worker. Bump CACHE when the shell changes.
-const CACHE = "nluja-tt-v7";
+const CACHE = "nluja-tt-v8";
 const ASSETS = [
   "./",
   "index.html",

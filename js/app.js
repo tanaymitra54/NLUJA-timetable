@@ -452,8 +452,7 @@ async function boot() {
   state.section = DATA.sections[saved] ? saved : "III";
   $("#sectionBtn").textContent = DATA.sections[state.section].label;
 
-  const savedTheme = localStorage.getItem("nluja.theme");
-  setTheme(savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  setTheme(localStorage.getItem("nluja.theme") || "light");
 
   switchView("today");
   if (IS_DEV) {
