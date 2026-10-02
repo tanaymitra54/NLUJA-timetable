@@ -13,6 +13,15 @@ export function dateKey(d) {
 const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export function dayKey(d) { return DOW[d.getDay()]; }
 
+// Working Saturdays: per-date override mapping a Saturday to a weekday's
+// timetable, keyed by dateKey. Dates absent from the map are non-working.
+let SATURDAYS = {}; // { "YYYY-MM-DD": "Mon" }
+export function setSaturdayRules(map) { SATURDAYS = map || {}; }
+export function resolvedDayKey(d) {
+  const k = dayKey(d);
+  return k === "Sat" ? (SATURDAYS[dateKey(d)] || k) : k;
+}
+
 function atTime(date, hhmm) {
   const [h, m] = hhmm.split(":").map(Number);
   const d = new Date(date);
@@ -57,14 +66,14 @@ export function periodProgress(period, now = new Date()) {
 }
 
 export function todayPeriodsFor(sectionData, date) {
-  const day = dayKey(date);
+  const day = resolvedDayKey(date);
   const row = sectionData?.days?.[day] || {};
   return Object.entries(row); // [periodId, cells[]]
 }
 
 // seconds until the next class starts today; null if none upcoming
 export function nextClass(sectionData, periods, date, now = new Date()) {
-  const day = dayKey(date);
+  const day = resolvedDayKey(date);
   const row = sectionData?.days?.[day] || {};
   let best = null;
   for (const [pid, cells] of Object.entries(row)) {
@@ -87,10 +96,9 @@ export function computeStats(store, section, sectionData) {
   const sec = store?.records?.[section] || {};
   for (const [dk, dayMarks] of Object.entries(sec)) {
     const d = new Date(dk + "T12:00:00");
-    const day = dayKey(d);
-    const row = sectionData?.days?.[day] || {};
     for (const [pid, rec] of Object.entries(dayMarks)) {
       if (!rec || rec.status === "cancelled") continue;
+      const row = sectionData?.days?.[rec.day || resolvedDayKey(d)] || {};
       const cell = (row[pid] || [])[0];
       const code = cell?.code || "?";
       const name = cell?.name || code;
@@ -116,10 +124,10 @@ export function courseHistory(store, section, sectionData) {
   const sec = store?.records?.[section] || {};
   for (const [dk, dayMarks] of Object.entries(sec)) {
     const d = new Date(dk + "T12:00:00");
-    const day = dayKey(d);
-    const row = sectionData?.days?.[day] || {};
     for (const [pid, rec] of Object.entries(dayMarks)) {
       if (!rec || rec.status === "cancelled") continue;
+      const day = rec.day || resolvedDayKey(d);
+      const row = sectionData?.days?.[day] || {};
       const cell = (row[pid] || [])[0];
       const code = cell?.code || "?";
       const name = cell?.name || code;

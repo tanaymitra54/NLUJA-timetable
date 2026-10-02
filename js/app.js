@@ -1,6 +1,7 @@
 import {
-  dateKey, dayKey, windowState, periodProgress, nextClass,
+  dateKey, windowState, periodProgress, nextClass,
   marksFor, computeStats, coursePercent, courseHistory, csvReport, setForceOpen,
+  setSaturdayRules, resolvedDayKey,
 } from "./attendance.js";
 import { load as loadStore, setMark, clearMark, exportBlob, importFile } from "./store.js";
 
@@ -15,7 +16,7 @@ const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 let DATA = null;
-const state = { section: "III", view: "today", query: "" };
+const state = { section: "III", view: "today", query: "", saturdays: {} };
 let RECORDS = loadStore();
 let deferredInstall = null;
 
@@ -64,7 +65,7 @@ function markControls(pid, period, now) {
 
 function renderToday() {
   const now = new Date();
-  let day = dayKey(now);
+  let day = resolvedDayKey(now);
   // Dev preview (?dev=1): on a weekend, show Monday so the marking UI is visible.
   if (IS_DEV && !DAYS.includes(day)) day = "Mon";
   $("#todayLabel").textContent = `${DAY_LABEL[day] || day}, ${now.getDate()} ${MONTHS[now.getMonth()]} ${now.getFullYear()}`;
@@ -167,10 +168,20 @@ function hourLabel(mins) {
   return `${hr} ${h >= 12 ? "PM" : "AM"}`;
 }
 
+// Next N Saturdays from today (today included when it is Saturday).
+function upcomingSaturdays(n = 8) {
+  const out = [];
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7));
+  for (let i = 0; i < n; i++, d.setDate(d.getDate() + 7)) out.push(new Date(d));
+  return out;
+}
+
 function renderWeek() {
   const sec = sectionData();
   const now = new Date();
-  const today = dayKey(now);
+  const today = dateKey(now);
   const q = state.query.trim().toLowerCase();
   const startM = 9 * 60;
   const endM = 17 * 60 + 30;
@@ -180,19 +191,28 @@ function renderWeek() {
   const dow = mon.getDay();
   mon.setDate(mon.getDate() + (dow === 0 ? -6 : 1 - dow));
 
-  const heads = DAYS.map((day, i) => {
+  const weekDays = DAYS.map((day, i) => {
     const d = new Date(mon);
     d.setDate(mon.getDate() + i);
-    return `<div class="wg-day ${day === today ? "today" : ""}"><span>${day}</span><b>${d.getDate()}</b></div>`;
-  }).join("");
+    return { key: day, date: d, schedule: day };
+  });
+  const satDate = new Date(mon);
+  satDate.setDate(mon.getDate() + 5);
+  const satFollows = state.saturdays[dateKey(satDate)];
+  if (satFollows) weekDays.push({ key: "Sat", date: satDate, schedule: satFollows });
+  const nCols = weekDays.length;
+
+  const heads = weekDays.map(({ key, date }) =>
+    `<div class="wg-day ${dateKey(date) === today ? "today" : ""}"><span>${key}</span><b>${date.getDate()}</b></div>`
+  ).join("");
 
   const hours = [];
   for (let m = startM; m <= endM; m += 60) hours.push(m);
   const hourMarks = hours.map((m) => `<span style="top:${pct(m)}%">${hourLabel(m)}</span>`).join("");
   const lines = hours.map((m) => `<i style="top:${pct(m)}%"></i>`).join("");
 
-  const cols = DAYS.map((day) => {
-    const row = sec.days[day] || {};
+  const cols = weekDays.map(({ date, schedule }) => {
+    const row = sec.days[schedule] || {};
     const blocks = Object.entries(row).flatMap(([pid, cells]) => {
       const p = periodOf(pid);
       const matched = cells.filter((c) => {
@@ -206,29 +226,38 @@ function renderWeek() {
         const width = 100 / matched.length;
         const room = c.room ? `Rm ${c.room}` : (c.options?.length ? c.options.map((o) => o.group).slice(0, 2).join(" · ") : "");
         const tint = subjectTint(courseName(c));
-        return `<button class="wg-ev wg-c${tint}" data-wday="${day}" data-wpid="${pid}" style="top:${top}%;height:${height}%;left:calc(${i * width}% + 3px);width:calc(${width}% - 6px)">
+        return `<button class="wg-ev wg-c${tint}" data-wdate="${dateKey(date)}" data-wpid="${pid}" style="top:${top}%;height:${height}%;left:calc(${i * width}% + 3px);width:calc(${width}% - 6px)">
           <b>${esc(courseName(c))}</b>
           <small>${esc(p.start)}–${esc(p.end)}${room ? " · " + esc(room) : ""}</small>
         </button>`;
       });
     }).join("");
-    return `<div class="wg-col ${day === today ? "today" : ""}">${blocks}</div>`;
+    return `<div class="wg-col ${dateKey(date) === today ? "today" : ""}">${blocks}</div>`;
   }).join("");
 
   const nowM = now.getHours() * 60 + now.getMinutes();
-  const nowLine = DAYS.includes(today) && nowM >= startM && nowM <= endM
-    ? `<div class="wg-now" style="top:${pct(nowM)}%"></div>` : "";
+  const showNow = weekDays.some(({ date }) => dateKey(date) === today) && nowM >= startM && nowM <= endM;
+  const nowLine = showNow ? `<div class="wg-now" style="top:${pct(nowM)}%"></div>` : "";
+
+  const satPanel = `<div class="section-title">Working Saturdays</div>
+    <div class="sat-panel">${upcomingSaturdays().map((d) => {
+      const k = dateKey(d);
+      const val = state.saturdays[k] || "";
+      const opts = ["", ...DAYS].map((v) => `<option value="${v}" ${val === v ? "selected" : ""}>${v ? DAY_LABEL[v] : "Holiday"}</option>`).join("");
+      return `<label class="sat-row"><span>${d.getDate()} ${MONTHS[d.getMonth()]}</span><select data-sat-date="${k}">${opts}</select></label>`;
+    }).join("")}</div>`;
 
   $("#view-week").innerHTML =
     `<input class="search" id="searchInput" placeholder="Search course, faculty, room…" value="${esc(state.query)}" />
      <div class="section-title">${esc(sec.label)} · Week</div>
-     <div class="week-scroll"><div class="week-grid">
-       <div class="wg-head"><div></div>${heads}</div>
+     <div class="week-scroll"><div class="week-grid" style="min-width:${52 + nCols * 130}px">
+       <div class="wg-head" style="grid-template-columns:52px repeat(${nCols}, 1fr)"><div></div>${heads}</div>
        <div class="wg-body">
          <div class="wg-hours">${hourMarks}</div>
-         <div class="wg-cols"><div class="wg-lines">${lines}</div>${nowLine}${cols}</div>
+         <div class="wg-cols" style="grid-template-columns:repeat(${nCols}, 1fr)"><div class="wg-lines">${lines}</div>${nowLine}${cols}</div>
        </div>
-     </div></div>`;
+     </div></div>
+     ${satPanel}`;
 }
 
 /* ---------------- Attendance ---------------- */
@@ -283,12 +312,13 @@ function openSectionSheet() {
   showSheet(`<div class="grabber"></div><h3>Choose your semester &amp; section</h3>${items}`);
 }
 
-function openDetail(pid, day = dayKey(new Date())) {
+function openDetail(pid, date = new Date()) {
   const now = new Date();
+  const day = resolvedDayKey(date);
   const cells = (sectionData().days[day] || {})[pid] || [];
   if (!cells.length) return;
   const p = periodOf(pid);
-  const marks = marksFor(RECORDS, state.section, now);
+  const marks = marksFor(RECORDS, state.section, date);
   const body = cells.map((c) => {
     const info = cellCard(c);
     const rows = [
@@ -301,7 +331,7 @@ function openDetail(pid, day = dayKey(new Date())) {
     ].filter(Boolean).map(([k, v]) => `<div class="detail-row"><span class="k">${esc(k)}</span><span class="v">${esc(v).replace(/&lt;br&gt;/g, "<br>")}</span></div>`).join("");
     return rows;
   }).join("");
-  const mark = day === dayKey(now) ? marks[pid] : null;
+  const mark = dateKey(date) === dateKey(now) ? marks[pid] : null;
   showSheet(`<div class="grabber"></div>
     <h3>${esc(p.start)}–${esc(p.end)}</h3>${body}
     ${mark ? `<div class="detail-row"><span class="k">Attendance</span><span class="v">${mark.status === "present" ? "Present" : "Absent"}</span></div>` : ""}`);
@@ -358,6 +388,13 @@ function applySection(key) {
   switchView(state.view);
 }
 
+function setSaturday(dateK, day) {
+  if (DAYS.includes(day)) state.saturdays[dateK] = day;
+  else delete state.saturdays[dateK];
+  localStorage.setItem("nluja.saturdays", JSON.stringify(state.saturdays));
+  setSaturdayRules(state.saturdays);
+}
+
 document.addEventListener("click", (e) => {
   const t = e.target.closest("[data-view],[data-present],[data-absent],[data-undo],[data-section],[data-detail],[data-course],[data-wpid]");
   if (!t) return;
@@ -366,14 +403,14 @@ document.addEventListener("click", (e) => {
   const dk = dateKey(now);
   if (t.dataset.present || t.dataset.absent) {
     const status = t.dataset.present ? "present" : "absent";
-    RECORDS = setMark(RECORDS, state.section, dk, t.dataset.present || t.dataset.absent, status);
+    RECORDS = setMark(RECORDS, state.section, dk, t.dataset.present || t.dataset.absent, status, resolvedDayKey(now));
     t.classList.add("just-" + status); // plays the pop animation
     setTimeout(() => renderToday(), 360);
   }
   else if (t.dataset.undo) { RECORDS = clearMark(RECORDS, state.section, dk, t.dataset.undo); renderToday(); }
   else if (t.dataset.section) { applySection(t.dataset.section); document.querySelector(".overlay")?.remove(); }
   else if (t.dataset.detail) openDetail(t.dataset.detail);
-  else if (t.dataset.wpid) openDetail(t.dataset.wpid, t.dataset.wday);
+  else if (t.dataset.wpid) openDetail(t.dataset.wpid, new Date(t.dataset.wdate + "T12:00:00"));
   else if (t.dataset.course) openCourseHistory(t.dataset.course, t.dataset.courseName);
 });
 
@@ -427,6 +464,13 @@ $("#view-week").addEventListener("input", (e) => {
   }
 });
 
+$("#view-week").addEventListener("change", (e) => {
+  if (e.target.dataset.satDate !== undefined) {
+    setSaturday(e.target.dataset.satDate, e.target.value);
+    if (state.view === "today") renderToday();
+  }
+});
+
 function setTheme(mode) {
   document.documentElement.setAttribute("data-theme", mode);
   localStorage.setItem("nluja.theme", mode);
@@ -450,6 +494,8 @@ async function boot() {
 
   const saved = localStorage.getItem("nluja.section");
   state.section = DATA.sections[saved] ? saved : "III";
+  try { state.saturdays = JSON.parse(localStorage.getItem("nluja.saturdays")) || {}; } catch { state.saturdays = {}; }
+  setSaturdayRules(state.saturdays);
   $("#sectionBtn").textContent = DATA.sections[state.section].label;
 
   setTheme(localStorage.getItem("nluja.theme") || "light");

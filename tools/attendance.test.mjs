@@ -2,6 +2,7 @@
 import assert from "node:assert";
 import {
   dateKey, dayKey, classWindow, windowState, periodProgress, computeStats, coursePercent, courseHistory, csvReport, nextClass,
+  setSaturdayRules, resolvedDayKey,
 } from "../js/attendance.js";
 
 const period = { id: "p1", start: "09:00", end: "09:50" };
@@ -84,5 +85,18 @@ assert.equal(csv, expectCsv);
 // empty
 const empty = computeStats({}, "V", { days: {} });
 assert.equal(empty.percent, null);
+
+// Saturday as a working day: a per-date rule maps it to a chosen weekday's
+// timetable, and the mark is attributed to that weekday's course even if the
+// rule is later removed.
+const sat = new Date(2026, 7, 8, 0, 0, 0); // Sat 8 Aug 2026
+assert.equal(dayKey(sat), "Sat");
+assert.equal(resolvedDayKey(sat), "Sat");
+setSaturdayRules({ "2026-08-08": "Mon" });
+assert.equal(resolvedDayKey(sat), "Mon");
+const satRecords = { version: 1, records: { III: { "2026-08-08": { p1: { status: "present", day: "Mon" } } } } };
+assert.equal(computeStats(satRecords, "III", sectionData).percent, 100);
+setSaturdayRules({});
+assert.equal(resolvedDayKey(sat), "Sat");
 
 console.log("attendance self-check: all assertions passed");

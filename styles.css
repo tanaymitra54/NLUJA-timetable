@@ -226,6 +226,18 @@ main { max-width: 760px; margin: 0 auto; padding: 18px 16px 8px; }
   margin-bottom: 4px; font: inherit; font-size: 14px;
 }
 .search:focus-visible { outline-offset: 2px; }
+.sat-panel { display: grid; gap: 8px; }
+.sat-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface); font-size: 14px; font-weight: 600;
+}
+.sat-row span { color: var(--text); font-variant-numeric: tabular-nums; }
+.sat-row select {
+  font: inherit; font-weight: 700; color: var(--text); background: var(--surface-2);
+  border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px;
+}
+.sat-row select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .week-scroll {
   overflow: auto; max-height: calc(100dvh - 168px);
   border: 1px solid var(--line); border-radius: 16px; background: var(--bg);

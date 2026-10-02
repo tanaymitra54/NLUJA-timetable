@@ -21,10 +21,10 @@ export function save(data) {
   localStorage.setItem(KEY, JSON.stringify(data));
 }
 
-export function setMark(data, section, dk, periodId, status) {
+export function setMark(data, section, dk, periodId, status, day) {
   data.records[section] = data.records[section] || {};
   data.records[section][dk] = data.records[section][dk] || {};
-  data.records[section][dk][periodId] = { status, at: new Date().toISOString() };
+  data.records[section][dk][periodId] = { status, at: new Date().toISOString(), ...(day ? { day } : {}) };
   save(data);
   return data;
 }
