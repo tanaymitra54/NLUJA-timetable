@@ -46,6 +46,16 @@ export function windowState(period, date, now = new Date()) {
   return "open";
 }
 
+// How a period sits against the clock. left is the share of the period still to go (1 = just started).
+export function periodProgress(period, now = new Date()) {
+  const start = atTime(now, period.start);
+  const end = atTime(now, period.end);
+  if (now < start) return { phase: "upcoming", left: 1 };
+  if (now >= end) return { phase: "past", left: 0 };
+  const span = end - start;
+  return { phase: "live", left: span > 0 ? (end - now) / span : 0 };
+}
+
 export function todayPeriodsFor(sectionData, date) {
   const day = dayKey(date);
   const row = sectionData?.days?.[day] || {};
@@ -96,6 +106,55 @@ export function computeStats(store, section, sectionData) {
     present, absent, total,
     percent: total ? Math.round((present / total) * 100) : null,
   };
+}
+
+// Full history per course code, newest first. Each entry is one marked
+// class: { dk, day, pid, status, at }. Follows computeStats' convention of
+// mapping a period's mark to its first cell's course code.
+export function courseHistory(store, section, sectionData) {
+  const hist = {}; // code -> [{dk, day, pid, status, at, name}]
+  const sec = store?.records?.[section] || {};
+  for (const [dk, dayMarks] of Object.entries(sec)) {
+    const d = new Date(dk + "T12:00:00");
+    const day = dayKey(d);
+    const row = sectionData?.days?.[day] || {};
+    for (const [pid, rec] of Object.entries(dayMarks)) {
+      if (!rec || rec.status === "cancelled") continue;
+      const cell = (row[pid] || [])[0];
+      const code = cell?.code || "?";
+      const name = cell?.name || code;
+      (hist[code] = hist[code] || []).push({ dk, day, pid, status: rec.status, at: rec.at, name });
+    }
+  }
+  for (const list of Object.values(hist)) list.sort((a, b) => (a.dk < b.dk ? 1 : a.dk > b.dk ? -1 : 0));
+  return hist;
+}
+
+// Build a CSV attendance matrix (opens in Excel): one row per course, one
+// column per marked date, each cell P/A, followed by Present/Absent/Total/%.
+function csvCell(v) {
+  v = String(v ?? "");
+  return /[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v;
+}
+
+export function csvReport(store, section, sectionData) {
+  const per = computeStats(store, section, sectionData).per;
+  const hist = courseHistory(store, section, sectionData);
+  const dates = [...new Set(Object.values(hist).flat().map((h) => h.dk))].sort();
+  const byCode = {}; // code -> { dk: 'P'|'A' }
+  for (const [code, list] of Object.entries(hist)) {
+    byCode[code] = {};
+    for (const h of list) byCode[code][h.dk] = h.status === "present" ? "P" : "A";
+  }
+  const lines = [
+    ["Course", "Class", ...dates, "Present", "Absent", "Total", "%"].map(csvCell).join(","),
+  ];
+  for (const r of per) {
+    const cp = coursePercent(r);
+    const row = [r.code, r.name, ...dates.map((d) => byCode[r.code]?.[d] || ""), r.present, r.absent, r.total, cp == null ? "" : cp].map(csvCell).join(",");
+    lines.push(row);
+  }
+  return lines.join("\r\n");
 }
 
 export function coursePercent(row) {

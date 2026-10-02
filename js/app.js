@@ -1,6 +1,6 @@
 import {
-  dateKey, dayKey, windowState, nextClass,
-  marksFor, computeStats, coursePercent, setForceOpen,
+  dateKey, dayKey, windowState, periodProgress, nextClass,
+  marksFor, computeStats, coursePercent, courseHistory, csvReport, setForceOpen,
 } from "./attendance.js";
 import { load as loadStore, setMark, clearMark, exportBlob, importFile } from "./store.js";
 
@@ -110,17 +110,20 @@ function renderToday() {
 
   const list = entries.map(([pid, cells]) => {
     const p = periodOf(pid);
-    const isNow = windowState(p, now) === "open";
+    const prog = periodProgress(p, now);
     const first = cells[0];
     const info = cellCard(first);
     const extra = cells.length > 1
       ? cells.slice(1).map((c) => `<div class="class-sub" style="margin-top:8px">${esc(c.code)} · ${esc(courseName(c))}${c.room ? " · Room " + esc(c.room) : ""}</div>`).join("")
       : "";
-    return `<div class="class-card ${isNow ? "now" : ""}">
+    const actions = markControls(pid, p, now);
+    const phase = prog.phase === "live" ? "live" : prog.phase === "past" ? "past" : "";
+    const wash = prog.phase === "live" ? ` style="--left:${Math.round(prog.left * 100)}%"` : "";
+    return `<div class="class-card ${phase}"${wash}>
       <div class="timecol">
         <div class="t-start">${esc(p.start)}</div>
-        <div class="t-end">${esc(p.end)}</div>
         <div class="bar"></div>
+        <div class="t-end">${esc(p.end)}</div>
       </div>
       <div class="class-body">
         <div class="class-code">${esc(first.code)}</div>
@@ -129,8 +132,8 @@ function renderToday() {
         ${info.options}
         ${extra}
         <div class="badges">${info.badges}</div>
-        <div class="actions">${markControls(pid, p, now)}</div>
       </div>
+      ${actions ? `<div class="actions">${actions}</div>` : ""}
     </div>`;
   }).join("");
 
@@ -139,44 +142,93 @@ function renderToday() {
 
 /* ---------------- Week ---------------- */
 
+const SUBJECT_TINT = {
+  "Alternative Dispute Resolution": 0, "Civil Procedure Code": 1, "Economics III": 2,
+  "Elective (ENG / ECO / POL / HIST / SOC)": 3, "English I": 4, "History I": 5, "History III": 6,
+  "Jurisprudence": 7, "Legal Methods": 8, "Paper 503 (CL)": 9, "Paper 504 (FL)": 10,
+  "Paper 506 (PL)": 11, "Paper 902 (MED)": 12, "Political Science I": 13, "Political Science III": 14,
+  "Seminar Paper": 15, "Seminar Paper (Specialization)": 16, "Sociology I": 17, "Sociology III": 18,
+  "Special Contracts": 19, "Specialization Paper": 20, "Taxation": 21, "Torts": 22,
+};
+function subjectTint(name) {
+  if (SUBJECT_TINT[name] != null) return SUBJECT_TINT[name];
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h + name.charCodeAt(i) * (i + 1)) % 23;
+  return h;
+}
+
+function minsOf(hhmm) {
+  const [h, m] = hhmm.split(":").map(Number);
+  return h * 60 + m;
+}
+function hourLabel(mins) {
+  const h = Math.floor(mins / 60);
+  const hr = h % 12 || 12;
+  return `${hr} ${h >= 12 ? "PM" : "AM"}`;
+}
+
 function renderWeek() {
   const sec = sectionData();
   const now = new Date();
   const today = dayKey(now);
   const q = state.query.trim().toLowerCase();
-  const blocks = DAYS.map((day) => {
-    const row = sec.days[day] || {};
-    let entries = Object.entries(row).sort((a, b) => periodOf(a[0]).start.localeCompare(periodOf(b[0]).start));
-    if (q) {
-      entries = entries.filter(([pid, cells]) =>
-        cells.some((c) =>
-          [c.code, courseName(c), c.room, c.title, ...(c.faculty || []).map(facName), ...((c.options || []).map((o) => o.group))]
-            .join(" ").toLowerCase().includes(q)
-        )
-      );
-    }
-    const cards = entries.map(([pid, cells]) => cells.map((c) => {
-      const p = periodOf(pid);
-      const info = cellCard(c);
-      return `<div class="class-card">
-        <div class="timecol"><div class="t-start">${esc(p.start)}</div><div class="t-end">${esc(p.end)}</div></div>
-        <div class="class-body">
-          <div class="class-code">${esc(c.code)}</div>
-          <div class="class-name">${esc(info.name)}</div>
-          ${info.sub ? `<div class="class-sub">${info.sub}</div>` : ""}
-          ${info.options}
-          <div class="badges">${info.badges}</div>
-        </div>
-      </div>`;
-    }).join("")).join("");
-    return `<div class="day-block ${day === today ? "today" : ""}">
-      <div class="day-head"><span class="d-name">${DAY_LABEL[day]}</span><span class="d-count">${entries.length} class${entries.length === 1 ? "" : "es"}</span></div>
-      ${entries.length ? cards : `<div class="free">No classes</div>`}
-    </div>`;
+  const startM = 9 * 60;
+  const endM = 17 * 60 + 30;
+  const span = endM - startM;
+  const pct = (m) => ((m - startM) / span) * 100;
+  const mon = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const dow = mon.getDay();
+  mon.setDate(mon.getDate() + (dow === 0 ? -6 : 1 - dow));
+
+  const heads = DAYS.map((day, i) => {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    return `<div class="wg-day ${day === today ? "today" : ""}"><span>${day}</span><b>${d.getDate()}</b></div>`;
   }).join("");
+
+  const hours = [];
+  for (let m = startM; m <= endM; m += 60) hours.push(m);
+  const hourMarks = hours.map((m) => `<span style="top:${pct(m)}%">${hourLabel(m)}</span>`).join("");
+  const lines = hours.map((m) => `<i style="top:${pct(m)}%"></i>`).join("");
+
+  const cols = DAYS.map((day) => {
+    const row = sec.days[day] || {};
+    const blocks = Object.entries(row).flatMap(([pid, cells]) => {
+      const p = periodOf(pid);
+      const matched = cells.filter((c) => {
+        if (!q) return true;
+        return [c.code, courseName(c), c.room, c.title, ...(c.faculty || []).map(facName), ...((c.options || []).map((o) => o.group))]
+          .join(" ").toLowerCase().includes(q);
+      });
+      return matched.map((c, i) => {
+        const top = pct(minsOf(p.start));
+        const height = ((minsOf(p.end) - minsOf(p.start)) / span) * 100;
+        const width = 100 / matched.length;
+        const room = c.room ? `Rm ${c.room}` : (c.options?.length ? c.options.map((o) => o.group).slice(0, 2).join(" · ") : "");
+        const tint = subjectTint(courseName(c));
+        return `<button class="wg-ev wg-c${tint}" data-wday="${day}" data-wpid="${pid}" style="top:${top}%;height:${height}%;left:calc(${i * width}% + 3px);width:calc(${width}% - 6px)">
+          <b>${esc(courseName(c))}</b>
+          <small>${esc(p.start)}–${esc(p.end)}${room ? " · " + esc(room) : ""}</small>
+        </button>`;
+      });
+    }).join("");
+    return `<div class="wg-col ${day === today ? "today" : ""}">${blocks}</div>`;
+  }).join("");
+
+  const nowM = now.getHours() * 60 + now.getMinutes();
+  const nowLine = DAYS.includes(today) && nowM >= startM && nowM <= endM
+    ? `<div class="wg-now" style="top:${pct(nowM)}%"></div>` : "";
+
   $("#view-week").innerHTML =
     `<input class="search" id="searchInput" placeholder="Search course, faculty, room…" value="${esc(state.query)}" />
-     <div class="section-title">${esc(sec.label)} · Full week</div>${blocks}`;
+     <div class="section-title">${esc(sec.label)} · Week</div>
+     <div class="week-scroll"><div class="week-grid">
+       <div class="wg-head"><div></div>${heads}</div>
+       <div class="wg-body">
+         <div class="wg-hours">${hourMarks}</div>
+         <div class="wg-cols"><div class="wg-lines">${lines}</div>${nowLine}${cols}</div>
+       </div>
+     </div></div>`;
 }
 
 /* ---------------- Attendance ---------------- */
@@ -189,7 +241,7 @@ function renderAttendance() {
   const p = stats.percent ?? 0;
   const rows = stats.per.length ? stats.per.map((r) => {
     const cp = coursePercent(r) ?? 0;
-    return `<div class="course-row">
+    return `<div class="course-row" data-course="${esc(r.code)}" data-course-name="${esc(r.name)}">
       <div class="cr-main">
         <div class="cr-name">${esc(r.name)}</div>
         <div class="cr-code">${esc(r.code)} · ${r.present} present · ${r.absent} absent</div>
@@ -212,6 +264,7 @@ function renderAttendance() {
     <div class="section-title">By course</div>${rows}
     <div class="toolbar">
       <button class="btn" id="exportBtn">Export backup</button>
+      <button class="btn" id="excelBtn">Export Excel</button>
       <button class="btn" id="importBtn">Import backup</button>
       <button class="btn ghost" id="resetBtn">Reset</button>
       <input type="file" id="importFile" accept="application/json" class="hidden" />
@@ -230,9 +283,8 @@ function openSectionSheet() {
   showSheet(`<div class="grabber"></div><h3>Choose your semester &amp; section</h3>${items}`);
 }
 
-function openDetail(pid) {
+function openDetail(pid, day = dayKey(new Date())) {
   const now = new Date();
-  const day = dayKey(now);
   const cells = (sectionData().days[day] || {})[pid] || [];
   if (!cells.length) return;
   const p = periodOf(pid);
@@ -249,10 +301,32 @@ function openDetail(pid) {
     ].filter(Boolean).map(([k, v]) => `<div class="detail-row"><span class="k">${esc(k)}</span><span class="v">${esc(v).replace(/&lt;br&gt;/g, "<br>")}</span></div>`).join("");
     return rows;
   }).join("");
-  const mark = marks[pid];
+  const mark = day === dayKey(now) ? marks[pid] : null;
   showSheet(`<div class="grabber"></div>
     <h3>${esc(p.start)}–${esc(p.end)}</h3>${body}
     ${mark ? `<div class="detail-row"><span class="k">Attendance</span><span class="v">${mark.status === "present" ? "Present" : "Absent"}</span></div>` : ""}`);
+}
+
+function openCourseHistory(code, name) {
+  const hist = courseHistory(RECORDS, state.section, sectionData());
+  const list = hist[code];
+  if (!list) return;
+  const present = list.filter((h) => h.status === "present").length;
+  const absent = list.length - present;
+  const items = list.map((h) => {
+    const [, m, d] = h.dk.split("-").map(Number);
+    const t = periodOf(h.pid);
+    const time = t ? `${t.start}–${t.end}` : "";
+    return `<div class="hist-item">
+      <span class="hist-date">${d} ${MONTHS[m - 1]}</span>
+      <span class="hist-slot">${h.day} ${time ? "· " + time : ""}</span>
+      <span class="pill ${h.status}">${h.status === "present" ? "Present" : "Absent"}</span>
+    </div>`;
+  }).join("");
+  showSheet(`<div class="grabber"></div>
+    <h3>${esc(name)}</h3>
+    <div class="hist-head">${present} present · ${absent} absent · ${list.length} class${list.length === 1 ? "" : "es"}</div>
+    ${items}`);
 }
 
 function showSheet(html) {
@@ -285,16 +359,22 @@ function applySection(key) {
 }
 
 document.addEventListener("click", (e) => {
-  const t = e.target.closest("[data-view],[data-present],[data-absent],[data-undo],[data-section],[data-detail]");
+  const t = e.target.closest("[data-view],[data-present],[data-absent],[data-undo],[data-section],[data-detail],[data-course],[data-wpid]");
   if (!t) return;
   if (t.dataset.view) return switchView(t.dataset.view);
   const now = new Date();
   const dk = dateKey(now);
-  if (t.dataset.present) { RECORDS = setMark(RECORDS, state.section, dk, t.dataset.present, "present"); renderToday(); }
-  else if (t.dataset.absent) { RECORDS = setMark(RECORDS, state.section, dk, t.dataset.absent, "absent"); renderToday(); }
+  if (t.dataset.present || t.dataset.absent) {
+    const status = t.dataset.present ? "present" : "absent";
+    RECORDS = setMark(RECORDS, state.section, dk, t.dataset.present || t.dataset.absent, status);
+    t.classList.add("just-" + status); // plays the pop animation
+    setTimeout(() => renderToday(), 360);
+  }
   else if (t.dataset.undo) { RECORDS = clearMark(RECORDS, state.section, dk, t.dataset.undo); renderToday(); }
   else if (t.dataset.section) { applySection(t.dataset.section); document.querySelector(".overlay")?.remove(); }
   else if (t.dataset.detail) openDetail(t.dataset.detail);
+  else if (t.dataset.wpid) openDetail(t.dataset.wpid, t.dataset.wday);
+  else if (t.dataset.course) openCourseHistory(t.dataset.course, t.dataset.courseName);
 });
 
 $("#sectionBtn").addEventListener("click", openSectionSheet);
@@ -310,6 +390,13 @@ $("#view-att").addEventListener("click", async (e) => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(exportBlob(RECORDS));
     a.download = `nluja-attendance-${dateKey(new Date())}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  } else if (e.target.id === "excelBtn") {
+    const csv = csvReport(RECORDS, state.section, sectionData());
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" }));
+    a.download = `nluja-attendance-${dateKey(new Date())}.csv`;
     a.click();
     URL.revokeObjectURL(a.href);
   } else if (e.target.id === "importBtn") {

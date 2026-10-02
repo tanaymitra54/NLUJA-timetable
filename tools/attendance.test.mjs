@@ -1,7 +1,7 @@
 // Runnable self-check: node tools/attendance.test.mjs
 import assert from "node:assert";
 import {
-  dateKey, dayKey, classWindow, windowState, computeStats, coursePercent, nextClass,
+  dateKey, dayKey, classWindow, windowState, periodProgress, computeStats, coursePercent, courseHistory, csvReport, nextClass,
 } from "../js/attendance.js";
 
 const period = { id: "p1", start: "09:00", end: "09:50" };
@@ -32,6 +32,12 @@ const nx = nextClass(sched, periods, day, at(8, 0));
 assert.equal(nx.pid, "p1");
 assert.equal(nextClass(sched, periods, day, at(9, 5)), null);
 
+assert.equal(periodProgress(period, at(8, 59)).phase, "upcoming");
+assert.equal(periodProgress(period, at(9, 0)).phase, "live");
+assert.equal(periodProgress(period, at(9, 0)).left, 1);
+assert.equal(periodProgress(period, at(9, 25)).left, 0.5);
+assert.equal(periodProgress(period, at(9, 50)).phase, "past");
+
 // stats: present/absent/cancelled
 const records = {
   version: 1,
@@ -57,6 +63,23 @@ const hist = stats.per.find((r) => r.code === "3.1");
 assert.equal(hist.present, 1);
 assert.equal(hist.absent, 0);
 assert.equal(coursePercent(hist), 100);
+
+// course history per code, newest first, cancelled excluded
+const ch = courseHistory(records, "III", sectionData);
+assert.deepEqual(ch["3.1"], [{ dk: "2026-08-10", day: "Mon", pid: "p1", status: "present", at: records.records["III"]["2026-08-10"].p1.at, name: "History III" }]);
+assert.equal(ch["3.2"].length, 2);
+assert.equal(ch["3.2"][0].dk, "2026-08-11"); // newest first
+assert.equal(ch["3.2"][0].status, "present");
+assert.equal(ch["3.2"][1].dk, "2026-08-10");
+assert.equal(ch["3.2"][1].status, "absent");
+assert.deepEqual(courseHistory({}, "V", { days: {} }), {});
+
+// csv report: course x date matrix, oldest date first, per sorted by total desc
+const csv = csvReport(records, "III", sectionData);
+const expectCsv = "Course,Class,2026-08-10,2026-08-11,Present,Absent,Total,%\r\n"
+  + "3.2,Pol III,A,P,1,1,2,50\r\n"
+  + "3.1,History III,P,,1,0,1,100";
+assert.equal(csv, expectCsv);
 
 // empty
 const empty = computeStats({}, "V", { days: {} });
