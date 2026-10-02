@@ -1,0 +1,11 @@
+.git
+.commandcode
+node_modules
+tools
+*.md
+*.pdf
+*.docx
+package.json
+package-lock.json
+netlify.toml
+wrangler.toml
